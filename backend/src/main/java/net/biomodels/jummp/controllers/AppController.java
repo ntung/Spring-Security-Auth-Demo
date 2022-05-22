@@ -1,4 +1,4 @@
-package com.thecodeveal.app.controllers;
+package net.biomodels.jummp.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

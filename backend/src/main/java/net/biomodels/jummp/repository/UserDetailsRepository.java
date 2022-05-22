@@ -1,9 +1,9 @@
-package com.thecodeveal.app.repository;
+package net.biomodels.jummp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.thecodeveal.app.entities.User;
+import net.biomodels.jummp.entities.User;
 
 
 @Repository

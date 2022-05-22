@@ -1,4 +1,4 @@
-package com.thecodeveal.app.entities;
+package net.biomodels.jummp.entities;
 
 import java.util.Collection;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.thecodeveal.app.requests;
+package net.biomodels.jummp.requests;
 
 public class AuthenticationRequest {
 	

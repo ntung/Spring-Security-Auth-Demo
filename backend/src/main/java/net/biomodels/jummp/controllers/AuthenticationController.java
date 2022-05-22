@@ -1,9 +1,11 @@
-package com.thecodeveal.app.controllers;
+package net.biomodels.jummp.controllers;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
 import java.security.spec.InvalidKeySpecException;
 
+import net.biomodels.jummp.responses.LoginResponse;
+import net.biomodels.jummp.responses.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,11 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.thecodeveal.app.config.JWTTokenHelper;
-import com.thecodeveal.app.entities.User;
-import com.thecodeveal.app.requests.AuthenticationRequest;
-import com.thecodeveal.app.responses.LoginResponse;
-import com.thecodeveal.app.responses.UserInfo;
+import net.biomodels.jummp.config.JWTTokenHelper;
+import net.biomodels.jummp.entities.User;
+import net.biomodels.jummp.requests.AuthenticationRequest;
 
 @RestController
 @RequestMapping("/api/v1")

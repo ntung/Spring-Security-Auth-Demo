@@ -1,4 +1,4 @@
-package com.thecodeveal.app;
+package net.biomodels.jummp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

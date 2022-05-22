@@ -1,4 +1,4 @@
-package com.thecodeveal.app.config;
+package net.biomodels.jummp.config;
 
 import java.io.IOException;
 

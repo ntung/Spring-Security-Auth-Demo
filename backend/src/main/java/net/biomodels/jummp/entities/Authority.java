@@ -1,4 +1,4 @@
-package com.thecodeveal.app.entities;
+package net.biomodels.jummp.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

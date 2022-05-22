@@ -1,20 +1,20 @@
-package com.thecodeveal.app.services;
+package net.biomodels.jummp.services;
 
+import net.biomodels.jummp.repository.UserDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.thecodeveal.app.entities.User;
-import com.thecodeveal.app.repository.UserDetailsRepository;
+import net.biomodels.jummp.entities.User;
 
 
 @Service
 public class CustomUserService implements UserDetailsService {
 	
 	@Autowired
-	UserDetailsRepository userDetailsRepository;
+    UserDetailsRepository userDetailsRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

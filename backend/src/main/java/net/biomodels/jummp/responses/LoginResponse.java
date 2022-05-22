@@ -1,4 +1,4 @@
-package com.thecodeveal.app.responses;
+package net.biomodels.jummp.responses;
 
 public class LoginResponse {
 	
