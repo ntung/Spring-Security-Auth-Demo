@@ -9,6 +9,6 @@ import net.biomodels.jummp.entities.User;
 @Repository
 public interface UserDetailsRepository extends JpaRepository<User, Long> {
 
-	User findByUserName(String userName);
+	User findByUsername(String username);
 	
 }

@@ -37,7 +37,7 @@ public class SpringSecurityDemoAppApplication {
 		
 		User user=new User();
 		
-		user.setUserName("hello");
+		user.setUsername("hello");
 		user.setFirstName("Pardeep");
 		user.setLastName("K");
 		

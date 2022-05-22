@@ -27,8 +27,8 @@ public class User implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column(name = "USER_NAME", unique = true)
-	private String userName;
+	@Column(name = "username", unique = true)
+	private String username;
 
 	@Column(name = "USER_KEY")
 	private String password;
@@ -75,7 +75,11 @@ public class User implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return this.userName;
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Override
@@ -108,14 +112,6 @@ public class User implements UserDetails {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	public Date getCreatedAt() {

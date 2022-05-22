@@ -9,7 +9,7 @@ const LoginPage=({loading,error,...props})=>{
 
 
     const [values, setValues] = useState({
-        userName: '',
+        username: '',
         password: ''
         });
 
@@ -85,7 +85,7 @@ const LoginPage=({loading,error,...props})=>{
                             <form className="my-login-validation" onSubmit={handleSubmit} noValidate={false}>
                                 <div className="form-group">
                                     <label htmlFor="email">User Name</label>
-                                    <input id="username" type="text" className="form-control" minLength={5} value={values.userName} onChange={handleChange} name="userName" required />
+                                    <input id="username" type="text" className="form-control" minLength={5} value={values.username} onChange={handleChange} name="username" required />
                                     
                                         <div className="invalid-feedback">
                                             UserId is invalid

@@ -4,7 +4,7 @@ public class UserInfo {
 	
 	private String firstName;
 	private String lastName;
-	private String userName;
+	private String username;
 	
 	private Object roles;
 
@@ -24,12 +24,12 @@ public class UserInfo {
 		this.lastName = lastName;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 
 	public Object getRoles() {

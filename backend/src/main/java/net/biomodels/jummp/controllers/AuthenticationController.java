@@ -42,7 +42,7 @@ public class AuthenticationController {
 	public ResponseEntity<?> login(@RequestBody AuthenticationRequest authenticationRequest) throws InvalidKeySpecException, NoSuchAlgorithmException {
 
 		final Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-				authenticationRequest.getUserName(), authenticationRequest.getPassword()));
+				authenticationRequest.getUsername(), authenticationRequest.getPassword()));
 		
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		

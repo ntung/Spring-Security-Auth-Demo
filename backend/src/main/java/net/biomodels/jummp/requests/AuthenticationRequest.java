@@ -2,15 +2,13 @@ package net.biomodels.jummp.requests;
 
 public class AuthenticationRequest {
 	
-	private String userName;
+	private String username;
 	private String password;
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 	
 	public String getPassword() {
 		return password;
 	}
-	
-
 }
