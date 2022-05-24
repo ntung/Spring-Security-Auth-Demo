@@ -1,10 +1,8 @@
 package net.biomodels.jummp.controllers;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.Principal;
-import java.security.spec.InvalidKeySpecException;
-
+import net.biomodels.jummp.config.JWTTokenHelper;
 import net.biomodels.jummp.entities.security.User;
+import net.biomodels.jummp.requests.AuthenticationRequest;
 import net.biomodels.jummp.responses.LoginResponse;
 import net.biomodels.jummp.responses.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +12,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import net.biomodels.jummp.config.JWTTokenHelper;
-import net.biomodels.jummp.requests.AuthenticationRequest;
+import java.security.NoSuchAlgorithmException;
+import java.security.Principal;
+import java.security.spec.InvalidKeySpecException;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -54,24 +48,18 @@ public class AuthenticationController {
 		
 		LoginResponse response=new LoginResponse();
 		response.setToken(jwtToken);
-		
 
 		return ResponseEntity.ok(response);
 	}
 	
 	@GetMapping("/auth/userinfo")
 	public ResponseEntity<?> getUserInfo(Principal user){
-		User userObj=(User) userDetailsService.loadUserByUsername(user.getName());
+		User userObj = (User) userDetailsService.loadUserByUsername(user.getName());
 		
-		UserInfo userInfo=new UserInfo();
-		userInfo.setFirstName(userObj.getFirstName());
-		userInfo.setLastName(userObj.getLastName());
+		UserInfo userInfo = new UserInfo();
+		userInfo.setUserName(userObj.getUsername());
 		userInfo.setRoles(userObj.getAuthorities().toArray());
-		
-		
+
 		return ResponseEntity.ok(userInfo);
-		
-		
-		
 	}
 }
