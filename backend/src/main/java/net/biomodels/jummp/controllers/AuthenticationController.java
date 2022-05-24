@@ -4,6 +4,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
 import java.security.spec.InvalidKeySpecException;
 
+import net.biomodels.jummp.entities.security.User;
 import net.biomodels.jummp.responses.LoginResponse;
 import net.biomodels.jummp.responses.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.biomodels.jummp.config.JWTTokenHelper;
-import net.biomodels.jummp.entities.User;
 import net.biomodels.jummp.requests.AuthenticationRequest;
 
 @RestController
