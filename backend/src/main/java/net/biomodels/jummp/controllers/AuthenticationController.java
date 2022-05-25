@@ -1,6 +1,7 @@
 package net.biomodels.jummp.controllers;
 
 import net.biomodels.jummp.config.JWTTokenHelper;
+import net.biomodels.jummp.entities.MyUserDetails;
 import net.biomodels.jummp.entities.security.User;
 import net.biomodels.jummp.requests.AuthenticationRequest;
 import net.biomodels.jummp.responses.LoginResponse;
@@ -43,7 +44,7 @@ public class AuthenticationController {
 		
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
-		User user=(User)authentication.getPrincipal();
+		User user = ((MyUserDetails) authentication.getPrincipal()).getUser();
 		String jwtToken=jWTTokenHelper.generateToken(user.getUsername());
 		
 		LoginResponse response=new LoginResponse();
@@ -54,7 +55,7 @@ public class AuthenticationController {
 	
 	@GetMapping("/auth/userinfo")
 	public ResponseEntity<?> getUserInfo(Principal user){
-		User userObj = (User) userDetailsService.loadUserByUsername(user.getName());
+		User userObj = ((MyUserDetails) ((UsernamePasswordAuthenticationToken) user).getPrincipal()).getUser();
 		
 		UserInfo userInfo = new UserInfo();
 		userInfo.setUserName(userObj.getUsername());

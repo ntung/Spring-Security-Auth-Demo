@@ -1,5 +1,6 @@
 package net.biomodels.jummp.services;
 
+import net.biomodels.jummp.entities.MyUserDetails;
 import net.biomodels.jummp.repository.UserDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +25,7 @@ public class CustomUserService implements UserDetailsService {
 		if(null == user) {
 			throw new UsernameNotFoundException("User Not Found with username " + username);
 		}
-		return user;
+		return new MyUserDetails(user);
 	}
 
 }

@@ -39,6 +39,4 @@ public class UserInfo {
 	public void setRoles(Object roles) {
 		this.roles = roles;
 	}
-	
-	
 }

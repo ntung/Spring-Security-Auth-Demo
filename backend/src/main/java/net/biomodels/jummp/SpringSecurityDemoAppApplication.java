@@ -10,7 +10,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @SpringBootApplication
 public class SpringSecurityDemoAppApplication {
@@ -28,7 +29,7 @@ public class SpringSecurityDemoAppApplication {
 	@PostConstruct
 	protected void init() {
 		
-		List<Role> authorityList = new ArrayList<Role>();
+		Set<Role> authorityList = new HashSet<>();
 		authorityList.add(createAuthority("USER","User role"));
 		authorityList.add(createAuthority("ADMIN","Admin role"));
 		User user = new User();
@@ -37,7 +38,7 @@ public class SpringSecurityDemoAppApplication {
 		user.setEmail("hello@test.com");
 		user.setPassword(passwordEncoder.encode("hello@123"));
 		user.setEnabled(true);
-		user.setAuthorities(authorityList);
+		user.setAuthorities((Set<Role>) authorityList);
 		System.out.println(user);
 		userDetailsRepository.save(user);
 	}
