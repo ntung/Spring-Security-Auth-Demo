@@ -19,7 +19,7 @@ const LoginPage=({loading,error,...props})=>{
 
         userLogin(values).then((response)=>{
 
-            console.log("response",response);
+            console.log("response: ", response);
             if(response.status===200){
                 props.setUser(response.data);
                 props.history.push('/dashboard');
@@ -52,7 +52,7 @@ const LoginPage=({loading,error,...props})=>{
             
 
         });
-        //console.log("Loading again",loading);
+        console.log("Loading again",loading);
 
         
     }
